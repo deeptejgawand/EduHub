@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org/">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="scro.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet">
+     <style>
+     .hidden{
+    opacity: 0;
+    filter: blur(5px);
+    transform: translateX(-100%);
+    transition: all 1s;
+}
+.show{
+    opacity: 1;
+    filter: blur(0);
+    transform: translateX(0);
+}
+      #nav{
+        background-color: #00ffa2;
+        color: #004466;
+        border: 2px solid #272343;
+        border-radius: 10px;
+        padding: 10px;
+        font-size: 15px;
+        font-family: 'Ubuntu', sans-serif;
+      }
+      .links{
+        text-decoration: none;
+        color: #004466;
+        padding: 10px;
+        margin: 10px;
+        font-family: 'Ubuntu', sans-serif;
+        font-weight: bold;
+        
+      }
+      .links:hover{
+
+        background-color: #004466;
+        color: #00ffa2;
+        box-shadow: 0px 0px 10px #004466;
+        border-radius: 10px;
+        transition: all 150ms ease-in-out;
+       
+       
+      }
+      .card{
+
+        background-color: #00ffa2;
+        font-family: 'Poppins', sans-serif;
+        border: 2px solid darkblue;
+        color:darkblue;
+      
+      }
+      
+      .btn-primary{
+        background-color: darkblue;
+       
+
+      }
+      a{
+        text-decoration: none;
+      }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script >
+    const observer=new IntersectionObserver((entries) =>{
+        entries.forEach((entry)=>{
+            console.log(entry)
+            if(entry.isIntersecting){
+                entry.target.classList.add('show');
+            }else{
+                entry.target.classList.remove('show');
+            }
+
+        });
+    });
+    const hiddenElements=document.querySelectorAll('hidden');
+    hiddenElements.forEach((el)=>observer.observe(el));
+    </script>
+    
+    <script>
+      var triggerEl = document.querySelector('#navId a')
+      bootstrap.Tab.getInstance(triggerEl).show() // Select tab by name
+    </script>
+        <script>
+          var modalId = document.getElementById('modalId');
+        
+          modalId.addEventListener('show.bs.modal', function (event) {
+              // Button that triggered the modal
+              let button = event.relatedTarget;
+              // Extract info from data-bs-* attributes
+              let recipient = button.getAttribute('data-bs-whatever');
+        
+            // Use above variables to manipulate the DOM
+          });
+        </script>
+         <script>
+          var modalId = document.getElementById('modalId1');
+        
+          modalId.addEventListener('show.bs.modal', function (event) {
+              // Button that triggered the modal
+              let button = event.relatedTarget;
+              // Extract info from data-bs-* attributes
+              let recipient = button.getAttribute('data-bs-whatever');
+        
+            // Use above variables to manipulate the DOM
+          });
+        </script>
+    
+</head>
+<body>
+ <!--landing page for educational course -->
+   <!--navbar with logo and links to facebook instagram and twitter-->
+   <div class="d-flex  justify-content-around  p-3" >
+    <div class="d-flex  justify-content-around w-25">
+        <div><svg  xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-book"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg></div>
+        <div id="logo"><h4>ABC</h4></div>
+    </div>
+    <div class="d-flex justify-content-between w-50" id="nav">
+      <div class="d-flex">
+      <div class="text-white"><a class="links" href="#">Home</a></div>
+      <div class="text-white"><a class="links" href="#">About</a></div>
+      <div class="text-white"><a class="links" href="#">Contact</a></div>
+      <div class="text-white"><a class="links" href="#">students Corner</a></div>
+    </div>
+   <div class="dropdown open">
+    <a class="links dropdown-toggle" type="button" id="triggerId" data-bs-toggle="dropdown" aria-haspopup="true"
+        aria-expanded="false">
+          Dropdown Anchor
+        </a>
+    <div class="dropdown-menu" aria-labelledby="triggerId">
+      <a class="dropdown-item" href="#">Action</a>
+      <a class="dropdown-item disabled" href="#">Disabled action</a>
+    </div>
+   </div>
+      </div>
+   </div>
+ <!-- Nav tabs -->
+ <ul class="nav nav-tabs" id="myTab" role="tablist">
+  <li class="nav-item" role="presentation">
+    <a th:href="@{/dash/home}"><button class="nav-link " id="Dashboard-tab" data-bs-toggle="tab" data-bs-target="one.html" type="button" role="tab" aria-controls="Dashboard" aria-selected="false">Dashboard</button></a>
+  </li>
+   <li class="nav-item" role="presentation">
+    <a th:href="@{/courses/home}"> <button class="nav-link active  " id="Course-tab" data-bs-toggle="tab-content" data-bs-target="#Course" type="button" role="tab" aria-controls="Course" aria-selected="true">Course</button></a>
+   </li>
+   <li class="nav-item" role="presentation">
+     <a th:href="@{/student/home}"><button class="nav-link" id="Students-tab" data-bs-toggle="tab" data-bs-target="#Students" type="button" role="tab" aria-controls="Students" aria-selected="false">Students</button></a>
+   </li>
+   <li class="nav-item" role="presentation">
+     <a th:href="@{/teacher/home}"><button class="nav-link" id="Teachers-tab" data-bs-toggle="tab" data-bs-target="#Teachers" type="button" role="tab" aria-controls="messages" aria-selected="false">Teachers</button></a>
+   </li>
+   <li class="nav-item" role="presentation">
+    <a th:href="@{/subject/home}"><button class="nav-link" id="Subjects-tab" data-bs-toggle="tab" data-bs-target="#Subjects" type="button" role="tab" aria-controls="profile" aria-selected="false">Subjects</button></a>
+  </li>
+ </ul>
+ <br>
+ <button type="button" class="btn btn-primary btn-lg ms-4" data-bs-toggle="modal" data-bs-target="#modalId1">
+  New Course
+</button>
+<a th:href="@{/courses/delete}"><button type="button" class="btn btn-danger btn-lg ms-2 "  >
+  Delete All
+</button></a>
+
+
+<!-- Modal -->
+<div class="modal fade" id="modalId1" tabindex="-1" role="dialog" aria-labelledby="modalTitleId" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title" id="modalTitleId">Add Course</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+      <div class="modal-body">
+       <form action="save" method="post">
+        <div class="mb-3">
+          <label for="" class="form-label"></label>
+          <input type="text" class="form-control" name="cname" id="cname" aria-describedby="helpId" placeholder="Course Name">
+         
+        </div>
+        <div class="mb-3">
+          <label for="" class="form-label">Start Date</label>
+          <input type="text"
+            class="form-control" name="sdate" id="sdate" aria-describedby="helpId" placeholder="Start date">
+         
+        </div>
+        <div class="mb-3">
+          <label for="" class="form-label">End Date</label>
+          <input type="text"
+            class="form-control" name="edate" id="edate" aria-describedby="helpId" placeholder="End date">
+        
+        </div>
+        <div class="mb-3">
+          <label for="" class="form-label"></label>
+          <input type="text" class="form-control" name="sem" id="sem" aria-describedby="helpId" placeholder="semesters">
+          <small id="helpId" class="form-text text-muted">Semesters must be below 6</small>
+        </div>
+
+     
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      <input type="submit" name="submit" value="submit"/>
+    </form>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="card border-secondary m-4 " th:each="cour : ${course}">
+ 
+  <div class="card-body ">
+    <h4 class="card-title" th:text="${cour.cname}">gfdgfdg<a class="btn btn-primary"></a></h4>
+    <p class="card-text" th:text="${cour.sem}">hrtyrh</p>
+  </div>
+</div>
+
+
+
+
+</body>
+</html>

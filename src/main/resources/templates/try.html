@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <script>
+     
+        function validateName(){
+            var name = document.getElementById("name").value
+            if(name.length  < 5){
+                document.getElementById("name_err").innerHTML = "Name must be greater than 5 chars"
+            }else{
+                return name
+            }
+        }  
+
+        function validateEmail(){
+            var email = document.getElementById("email").value
+            if(!email.endsWith("cdac.com")){
+                document.getElementById("email_err").innerHTML = "Email must be  of cdac.com"
+            }else{
+                return email
+            }
+        }
+     function save(){
+            var name = validateName()
+            var email = validateEmail()
+            if(name && email){
+                document.getElementById("msg").innerHTML= "Data Saved"
+                document.getElementById("email_err").innerHTML = ""
+                document.getElementById("name_err").innerHTML = ""
+            }
+        }
+    </script>
+</head>
+<body>
+    Enter name : <input type="text" id="name" onblur="validateName()">
+    <span id="name_err"></span>
+    <br>
+    Enter email : <input type="text" id="email" onblur="validateEmail()">
+    <span id="email_err"></span>
+    <br>
+    <button onclick="save()"> Save</button>
+    <span id="msg"></span>
+</body>
+</html>

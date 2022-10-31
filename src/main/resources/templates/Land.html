@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org/">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+      var triggerEl = document.querySelector('#navId a')
+      bootstrap.Tab.getInstance(triggerEl).show() // Select tab by name
+    </script>
+        <script>
+          var modalId = document.getElementById('modalId');
+        
+          modalId.addEventListener('show.bs.modal', function (event) {
+              // Button that triggered the modal
+              let button = event.relatedTarget;
+              // Extract info from data-bs-* attributes
+              let recipient = button.getAttribute('data-bs-whatever');
+        
+            // Use above variables to manipulate the DOM
+          });
+        </script>
+         <script>
+          var modalId = document.getElementById('modalId1');
+        
+          modalId.addEventListener('show.bs.modal', function (event) {
+              // Button that triggered the modal
+              let button = event.relatedTarget;
+              // Extract info from data-bs-* attributes
+              let recipient = button.getAttribute('data-bs-whatever');
+        
+            // Use above variables to manipulate the DOM
+          });
+        </script>
+    
+</head>
+<body>
+
+ <!-- Nav tabs -->
+ <ul class="nav nav-tabs" id="myTab" role="tablist">
+  <li class="nav-item" role="presentation">
+    <a href="one.html"><button class="nav-link active" id="Dashboard-tab" data-bs-toggle="tab" data-bs-target="one.html" type="button" role="tab" aria-controls="Dashboard" aria-selected="false">Dashboard</button></a>
+  </li>
+   <li class="nav-item" role="presentation">
+     <a href="course.html"><button class="nav-link " id="Course-tab" data-bs-toggle="tab" data-bs-target="#Course" type="button" role="tab" aria-controls="Course" aria-selected="true">Course</button></a>
+   </li>
+   <li class="nav-item" role="presentation">
+     <button class="nav-link" id="Students-tab" data-bs-toggle="tab" data-bs-target="#Students" type="button" role="tab" aria-controls="Students" aria-selected="false">Students</button>
+   </li>
+   <li class="nav-item" role="presentation">
+     <button class="nav-link" id="Teachers-tab" data-bs-toggle="tab" data-bs-target="#Teachers" type="button" role="tab" aria-controls="messages" aria-selected="false">Teachers</button>
+   </li>
+   <li class="nav-item" role="presentation">
+    <button class="nav-link" id="Subjects-tab" data-bs-toggle="tab" data-bs-target="#Subjects" type="button" role="tab" aria-controls="profile" aria-selected="false">Subjects</button>
+  </li>
+ </ul>
+ <br>
+ <!-- Tab panes -->
+ <div class="tab-content">
+   <div class="tab-pane " id="Students" role="tabpanel" aria-labelledby="Students-tab">
+    <!-- Button trigger modal -->
+    
+   <div class="tab-pane" id="Teachers" role="tabpanel" aria-labelledby="profile-tab"> Teachers </div>
+   <div class="tab-pane" id="Course" role="tabpanel" aria-labelledby="messages-tab"> 
+    <!--course start-->
+    <!-- Button trigger modal -->
+    <button type="button" class="btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#modalId1">
+      New Course
+    </button>
+    
+    <!-- Modal -->
+    <div class="modal fade" id="modalId1" tabindex="-1" role="dialog" aria-labelledby="modalTitleId" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modalTitleId">Add Course</h5>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+          <div class="modal-body">
+           <form action="save" method="post">
+            <div class="mb-3">
+              <label for="" class="form-label"></label>
+              <input type="text" class="form-control" name="cname" id="cname" aria-describedby="helpId" placeholder="Course Name">
+             
+            </div>
+            <div class="mb-3">
+              <label for="" class="form-label">Start Date</label>
+              <input type="text"
+                class="form-control" name="startdate" id="sdate" aria-describedby="helpId" placeholder="Start date">
+             
+            </div>
+            <div class="mb-3">
+              <label for="" class="form-label">End Date</label>
+              <input type="text"
+                class="form-control" name="enddate" id="edate" aria-describedby="helpId" placeholder="End date">
+            
+            </div>
+            <div class="mb-3">
+              <label for="" class="form-label"></label>
+              <input type="text" class="form-control" name="sem" id="sem" aria-describedby="helpId" placeholder="semesters">
+              <small id="helpId" class="form-text text-muted">Semesters must be below 6</small>
+            </div>
+
+         
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <input type="submit" name="submit" value="submit"/>
+        </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+  
+    
+     </div>
+   
+   <div class="tab-pane" id="Subjects" role="tabpanel" aria-labelledby="Subjects-tab"> Subjects </div>
+ </div>
+ 
+</body>
+</html>

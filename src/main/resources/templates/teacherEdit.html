@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org/">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title> <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet">
+     <style>
+       .card{
+
+background-color: #00ffa2;
+font-family: 'Poppins', sans-serif;
+border: 2px solid darkblue;
+color:darkblue;
+
+}
+.navbar{
+background-color: #00ffa2;
+color: #004466;
+border: 2px solid #272343;
+
+padding: 10px;
+font-size: 15px;
+font-family: 'Poppins', sans-serif;
+
+
+}
+.links{
+text-decoration: none;
+color: #004466;
+padding: 10px;
+margin: 10px;
+font-family: 'Poppins', sans-serif;
+font-weight: bold;
+
+}
+.links:hover{
+
+background-color: #004466;
+color: #00ffa2;
+box-shadow: 0px 0px 10px #004466;
+border-radius: 10px;
+transition: all 150ms ease-in-out;
+
+
+}
+
+.btn-primary{
+background-color: darkblue;
+
+
+}
+.nav-item{
+color: white;
+font-weight: bold;
+}
+a{
+text-decoration: none;
+}
+footer{
+
+color: #004466;
+padding: 10px;
+
+
+}
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+      var triggerEl = document.querySelector('#navId a')
+      bootstrap.Tab.getInstance(triggerEl).show() // Select tab by name
+    </script>
+        <script>
+          var modalId = document.getElementById('modalId');
+        
+          modalId.addEventListener('show.bs.modal', function (event) {
+              // Button that triggered the modal
+              let button = event.relatedTarget;
+              // Extract info from data-bs-* attributes
+              let recipient = button.getAttribute('data-bs-whatever');
+        
+            // Use above variables to manipulate the DOM
+          });
+        </script>
+         <script>
+          var modalId = document.getElementById('modalId1');
+        
+          modalId.addEventListener('show.bs.modal', function (event) {
+              // Button that triggered the modal
+              let button = event.relatedTarget;
+              // Extract info from data-bs-* attributes
+              let recipient = button.getAttribute('data-bs-whatever');
+        
+            // Use above variables to manipulate the DOM
+          });
+        </script>
+    
+</head>
+<body>
+
+ <!-- Nav tabs -->
+ 
+ <nav class="navbar navbar-expand-sm ">
+  <a class="navbar-brand" href="#">ABC</a>
+  <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavId" aria-controls="collapsibleNavId"
+      aria-expanded="false" aria-label="Toggle navigation"></button>
+  <div class="collapse navbar-collapse" id="collapsibleNavId">
+      <ul class="navbar-nav me-auto mt-2 mt-lg-0">
+          <li class="nav-item">
+              <a class="links active" th:href="@{/admin/home}" aria-current="page">Dashboard<span class="visually-hidden">(current)</span></a>
+          </li>
+         
+            <li class="nav-item">
+              <a class="links"th:href="@{/admin/showStudents}" aria-current="page">Students<span class="visually-hidden">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="links " th:href="@{/admin/showSubjects}" aria-current="page">Subjects<span class="visually-hidden">(current)</span></a>
+        </li>
+       
+      <li class="nav-item">
+        <a class="links " th:href="@{/admin/showTeachers}" aria-current="page">Teachers<span class="visually-hidden">(current)</span></a>
+    </li>
+    <li class="nav-item">
+      <a class="links " th:href="@{/admin/setResult}" aria-current="page">Results <span class="visually-hidden">(current)</span></a>
+
+  </li>
+          
+         
+      </ul>
+      <div class="nav-item dropdown me-md-5">
+        <a class="links" th:href="@{/logout}">logout</a>           
+           
+        </div>
+      </div>
+  </div>
+</nav>
+ <br>
+ <form th:action="@{/admin/updateTeacher}" method="post">
+ <div class="container align-content-center col-6" th:object="${teacher}">
+ <div class="mb-1">
+   <label for="" class="form-label">First Name</label>
+   <input type="text" th:value="${teacher.fname}" name="fname" id="" class="form-control" placeholder="" aria-describedby="helpId">
+   <div class="mb-3">
+    <label class="visually-hidden" for="inputName">Hidden input label</label>
+    <input type="text" class="form-control" name="teaid" th:value="${teacher.userid}" id="inputName" placeholder="" hidden>
+   </div>
+   
+ </div>
+ <div class="mb-1">
+   <label for="" class="form-label">Last Name</label>
+   <input type="text" th:value="${teacher.lname}" class="form-control" name="lname" id="" aria-describedby="helpId" placeholder="">
+  
+ </div>
+ <div class="mb-1">
+   <label for="" class="form-label">Email</label>
+   <input type="email" th:value="${teacher.email}" class="form-control" name="email" id="" aria-describedby="emailHelpId" placeholder="abc@mail.com">
+  
+ </div>
+ <div class="mb-1">
+   <label for="" class="form-label">Mobile Number</label>
+   <input type="text" th:value="${teacher.mnumber}" class="form-control" name="mnumber" id="" aria-describedby="helpId" placeholder="">
+   
+ </div>
+<input type="submit" value="Save" class="btn btn-primary">
+    
+</div>
+</form>
+  
+
+  
+ <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+  <div class="col-md-4 d-flex align-items-center">
+    <a href="/" class="mb-3 me-2 mb-md-0 text-muted text-decoration-none lh-1">
+      <svg class="bi" width="30" height="24"><use xlink:href="#bootstrap"/></svg>
+    </a>
+    <span class="mb-3 mb-md-0 ">&copy; ABC Institute, BBSR</span>
+  </div>
+
+  <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
+    <li class="mx-2"><svg  xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-facebook"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg></li>
+        <li class="mx-2"><svg  xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-twitter"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg></li>
+        <li class="mx-2"><svg  xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-instagram"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg></li>
+  </ul>
+</footer>
+
+
+</body>
+</html>

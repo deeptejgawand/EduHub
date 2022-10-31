@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../static/css/bootstrap.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+    <script src="../static/js/bootstrap.js"></script>
+    <style>
+      body{
+      
+        color: #004466;
+      }
+      button{
+        background-color:#004466;
+        color: #00ffa2;
+        border: 2px solid #272343;
+        border-radius: 10px;
+        padding: 10px;
+        font-size: 15px;
+        font-family: 'Ubuntu', sans-serif;
+
+        
+      }
+      button:hover{
+        background-color: #272343;
+        color: #ffd803;
+        box-shadow: 0px 0px 10px #272343;
+        font-family: 'Ubuntu', sans-serif;
+      }
+      #logo{
+        font-family: 'Dancing Script', cursive;
+        
+       
+
+       
+      }
+      #nav{
+        background-color: #00ffa2;
+        color: #004466;
+        border: 2px solid #272343;
+        border-radius: 10px;
+        padding: 10px;
+        font-size: 15px;
+        font-family: 'Ubuntu', sans-serif;
+      }
+      .links{
+        text-decoration: none;
+        color: #004466;
+        padding: 10px;
+        margin: 10px;
+        font-family: 'Ubuntu', sans-serif;
+        font-weight: bold;
+        
+      }
+      .links:hover{
+
+        background-color: #004466;
+        color: #00ffa2;
+        box-shadow: 0px 0px 10px #004466;
+        border-radius: 10px;
+        transition: all 150ms ease-in-out;
+       
+       
+      }
+    #firstimg{
+      background-image: url("blob.svg");
+      background-repeat: no-repeat;
+      
+     
+    }
+    #secondimg{
+      background-image: url("wave.svg");
+      width: max-content;
+      background-repeat: no-repeat;
+      
+     
+    }
+    #thirdsec{
+      background-image: url("wave2.svg");
+    
+      background-repeat: no-repeat;
+      
+     
+    }
+    #cf{
+      animation: cubic-bezier(0.19, 1, 0.22, 1) 1s infinite;
+    }
+    #cdh{
+      background-color: #004466;
+      color: #00ffa2;
+      border: 2px solid #272343;
+      box-shadow: #00ffa2;
+
+    }
+    #cdh:hover{
+      background-color: #00ffa2;
+      color: #004466;
+      box-shadow: 0px 0px 10px #00ffa2;
+      border-radius: 10px;
+      transition: all 150ms ease-in-out;
+    }
+    footer{
+      background-color: #00ffa2;
+      color: #004466;
+      padding: 10px;
+      font-family: 'Ubuntu', sans-serif;
+      font-weight: bold;
+    }
+    </style>
+</head>
+<body >
+ <!--landing page for educational course -->
+   <!--navbar with logo and links to facebook instagram and twitter-->
+   <div class="d-flex  justify-content-around  p-3" >
+    <div class="d-flex  justify-content-around w-25">
+        <div><svg  xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-book"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg></div>
+        <div id="logo"><h4>ABC</h4></div>
+    </div>
+    <div class="d-flex justify-content-between w-50" id="nav">
+      <div class="d-flex">
+      <div class="text-white"><a class="links" href="#">Home</a></div>
+      <div class="text-white"><a class="links" href="#">About</a></div>
+      <div class="text-white"><a class="links" href="#">Contact</a></div>
+      <div class="text-white"><a class="links" href="#">students Corner</a></div>
+    </div>
+    <div class="d-flex">
+        <div class="mx-2"><svg  xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-facebook"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg></div>
+        <div class="mx-2"><svg  xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-twitter"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg></div>
+        <div class="mx-2"><svg  xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-instagram"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg></div>
+      </div>
+      </div>
+   </div>
+    <!--end of navbar-->
+    <!--start of landing page-->
+    <!--two divs inside one div in which one has image lt.png and another has jumbotron-->
+    <div class="container-fluid ms-5 d-flex  mt-5 mb-3">
+      <div class="row">
+        <div class="col-5 " id="firstimg">
+          <img src="lt.png" class="img-fluid w-75   ">
+        </div>
+        <div class="col-md-5">
+          <div class="jumbotron">
+            <h1 class="display-4">Welcome to ABC</h1>
+            <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+            <hr class="my-4">
+            <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
+            <a class="btn btn-primary btn-lg" href="loginpage.html" role="button">Join Us</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <br>
+    <br>
+
+    <!--one div containes two div in which left div is card and right div is image gallary-->
+    <div class=" d-flex justify-content-between">
+    <div class="w-50 p-4">
+      <div class="card p-3" id="cdh">
+        <h1>Course highlights</h1>
+        <ul>
+          <li>900+ hours of video lectures</li>
+          <li>100+ hours of practice</li>
+         <li>chance to work on industry projects</li>
+         <li>Faculties to help you</li>
+         <li>Learn backend technologies such as PHP, Java, Python, etc.</li>
+          <li>Learn frontend technologies such as HTML, CSS, JavaScript, etc.</li>
+          <li>Learn database technologies such as MySQL, MongoDB, etc.</li>
+          <li>Learn cloud technologies such as AWS, Azure, etc.</li>
+          <li>Learn DevOps technologies such as Docker, Kubernetes, etc.</li>
+          <li>MERN stack</li>
+          <li>Learn about the latest technologies</li>
+          <li>Caching with Redis</li>
+
+
+         
+
+        </ul>
+      </div>
+    </div>
+    <!--end of ex-->
+    <div class="w-50 border rounded-4 p-3">
+      <div id="carouselExampleInterval " class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner ">
+          <div class="carousel-item active w-100" data-bs-interval="1000">
+            <img src="../static/1.jpg" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item w-100" data-bs-interval="1000">
+            <img src="../static/2.jpg" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item w-100">
+            <img src="../static/3.jpg" class="d-block w-100" alt="...">
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    </div>
+  </div>
+   
+   
+  
+   
+
+  
+  <div class="d-flex justify-content-around mt-4 w-100" id="secondimg">
+   
+    <div  >
+      <img src="../static/teach.PNG" class="img-fluid w-75">
+    </div>
+    <div class="mt-5">
+      <h1>Experienced faculties</h1>
+      <p>
+        Abc has team of experienced faculty<br> who are dedicated to provide best quality education.
+        They come from different fields and <br>are well trained to provide best quality education.
+
+      </p>
+    </div>
+
+  </div>
+  <!--end of div with two divs inside it-->
+  <!--blockquote cards of testimonials from students without buttons-->
+  <div class="container-fluid mt-5">
+    <div class="row">
+      <div class="col-md-4">
+        <div class="card">
+          <div class="card-body">
+            <blockquote class="blockquote mb-0">
+              <p>
+                Latest technologies taught by ABC are very useful for me.
+              </p>
+              <footer class="blockquote-footer">
+                <small class="text-muted">
+                  Harsh <cite title="Source Title">placed in amdocs</cite>
+                </small>
+              </footer>
+            </blockquote>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card">
+          <div class="card-body">
+            <blockquote class="blockquote mb-0">
+              <p>
+                All the staff is supportive and friendly. I am very happy to be a part of ABC.
+              </p>
+              <footer class="blockquote-footer">
+                <small class="text-muted">
+                  Abhijeet  <cite title="Source Title">placed in IBM</cite>
+                </small>
+              </footer>
+            </blockquote>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card">
+          <div class="card-body">
+            <blockquote class="blockquote mb-0">
+              <p>
+                React taught by ABC is very useful for me. It got me into cykage .
+              </p>
+              <footer class="blockquote-footer">
+                <small class="text-muted">
+                  Vaibhav  <cite title="Source Title">placed in cykage</cite>
+                </small>
+              </footer>
+            </blockquote>
+          </div>
+        </div>
+      </div>
+      <!--footer div block which has contact us -->
+      <footer class="mt-4">
+        <div>
+            <div class="d-flex justify-content-center ">
+                <div class="p-2"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-mail"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>Abc@gmail.com</div>
+                 <div class="p-2"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-phone"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>4815162342</div>
+                <div class="p-2"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-map-pin"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>Bhubaneshwar </div>
+                </div>
+        </div>
+        <div class="d-flex justify-content-center">
+    
+            <div class="p-2">
+                <p class="text-center text-white">Copyright &copy; 2022 CDAC BBSR Group-8</p>
+            </div>
+        </div>
+    
+       </footer>
+
+ 
+    
+
+
+ 
+</body>
+</html>
